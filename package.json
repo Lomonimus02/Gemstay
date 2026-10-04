@@ -1,0 +1,13 @@
+{
+  "name": "gemstay-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node build.mjs",
+    "test": "node --test tests/revenue.test.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
