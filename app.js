@@ -91,7 +91,6 @@ form.addEventListener('change', () => {
   applyPropertyDefaults();
   renderPlan();
 });
-$('.mobile-dock>a').addEventListener('click', event => { event.preventDefault(); openPlanner(); });
 for (const select of [$('#plan-area'), $('#plan-type'), $('#plan-bedrooms')]) select.addEventListener('change', () => {
   validateBedrooms($('#plan-type'), $('#plan-bedrooms'));
   area.value = $('#plan-area').value;
@@ -212,42 +211,45 @@ $('#export-plan').addEventListener('click', () => {
   $('#planner-status').textContent = 'Revenue plan downloaded as a CSV file.';
 });
 
-// Reuse header destinations, but order the desktop section index by the page itself.
+// Header, side index and phone menu share the page's chapters. The side index also includes owner steps that sit inside the owners chapter.
 const navigationDialog = $('#navigation-dialog');
 const navigationOpeners = [...document.querySelectorAll('[data-open-menu]')];
-const headerLinks = [...document.querySelectorAll('#main-nav a'), $('.header-cta')];
-const headerLinksById = new Map(headerLinks.map(link => [link.hash.slice(1), link]));
-const trackedSections = [...document.querySelectorAll('main section[id]')].filter(section => headerLinksById.has(section.id));
-const pageOrderedLinks = trackedSections.map(section => headerLinksById.get(section.id));
-for (const container of document.querySelectorAll('.scroll-nav-links, .mobile-nav-links')) {
-  const sources = container.matches('.scroll-nav-links') ? pageOrderedLinks : headerLinks;
-  for (const source of sources) {
-    const link = document.createElement('a');
-    link.href = source.getAttribute('href');
-    link.textContent = source.textContent.trim();
-    container.append(link);
-  }
-}
+const headerNavLinks = [...document.querySelectorAll('#main-nav a')];
 const sectionLinks = [...document.querySelectorAll('#main-nav a, .scroll-nav-links a, .mobile-nav-links a')];
 const desktopSectionLinks = [...document.querySelectorAll('.scroll-nav-links a')];
-const darkNavigationSurfaces = [...document.querySelectorAll('.hero, .process-section')];
+const trackedIds = new Set(sectionLinks.map(link => link.hash.slice(1)).filter(Boolean));
+const trackedSections = [...document.querySelectorAll('main [id]')].filter(section => trackedIds.has(section.id));
+const darkNavigationSurfaces = [...document.querySelectorAll('.surface-dark')];
 const compactNavigation = matchMedia('(max-width: 1179px)');
 let scrollFrame = null;
+
+function headerLinkFor(activeId) {
+  const index = trackedSections.findIndex(section => section.id === activeId);
+  if (index < 0) return null;
+  let match = null;
+  for (const link of headerNavLinks) {
+    const targetIndex = trackedSections.findIndex(section => section.id === link.hash.slice(1));
+    if (targetIndex !== -1 && targetIndex <= index) match = link;
+  }
+  return match;
+}
 
 function updateNavigation() {
   scrollFrame = null;
   const headerPassed = $('.site-header').getBoundingClientRect().bottom <= 0;
   $('#scroll-navigation').hidden = !headerPassed || compactNavigation.matches;
   $('.mobile-dock').hidden = !headerPassed || !compactNavigation.matches;
-  const sections = trackedSections.map(section => ({ id: section.id, top: section.getBoundingClientRect().top })).sort((a, b) => a.top - b.top);
   const atPageEnd = Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 2;
-  const active = (atPageEnd ? sections.at(-1) : sections.filter(section => section.top <= innerHeight * 0.3).at(-1)) || sections[0];
+  const passed = trackedSections.filter(section => section.getBoundingClientRect().top <= innerHeight * 0.3);
+  const active = atPageEnd ? trackedSections.at(-1) : passed.at(-1);
+  const headerActive = active ? headerLinkFor(active.id) : null;
   for (const link of sectionLinks) {
-    const current = link.getAttribute('href') === '#' + active.id;
+    const inHeader = Boolean(link.closest('#main-nav'));
+    const current = inHeader ? link === headerActive : link.hash === `#${active?.id ?? ''}`;
     link.classList.toggle('is-active', current);
     if (current) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
-    if (link.closest('#main-nav')) link.classList.toggle('nav-active', current);
+    if (inHeader) link.classList.toggle('nav-active', current);
   }
   if (headerPassed && !compactNavigation.matches) {
     const darkBounds = darkNavigationSurfaces.map(section => section.getBoundingClientRect());
@@ -287,8 +289,13 @@ $('.mobile-nav-links').addEventListener('click', (event) => {
   const link = event.target.closest('a');
   if (!link) return;
   const destination = document.querySelector(link.getAttribute('href'));
+  if (!destination) return;
+  event.preventDefault();
   closeMenu();
+  // Closing the dialog returns focus to the menu button and would undo the jump.
   requestAnimationFrame(() => {
+    destination.scrollIntoView({ block: 'start', behavior: 'instant' });
+    history.pushState(null, '', link.hash);
     destination.setAttribute('tabindex', '-1');
     destination.focus({ preventScroll: true });
   });
@@ -327,4 +334,38 @@ $('#contact-form').addEventListener('submit', (event) => {
   message += '\n\nPlease get in touch to discuss my property. Thank you.';
   window.location.href = `mailto:hello@gemstay.ae?subject=${encodeURIComponent('Property consultation — ' + name)}&body=${encodeURIComponent(message)}`;
   $('#contact-status').textContent = 'Your email app will open with a draft. Please review and send it there. If it does not open, contact hello@gemstay.ae or use WhatsApp below.';
+});
+
+const bookingForm = $('#booking-form');
+const checkIn = $('#check-in');
+const checkOut = $('#check-out');
+const bookingError = $('#booking-error');
+const bookingNights = $('#booking-nights');
+const localISO = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+const plusDay = isoDate => {
+  const date = new Date(`${isoDate}T00:00:00`);
+  date.setDate(date.getDate() + 1);
+  return localISO(date);
+};
+checkIn.min = localISO(new Date());
+function syncBookingDates() {
+  checkOut.min = checkIn.value ? plusDay(checkIn.value) : plusDay(checkIn.min);
+  if (checkOut.value && checkIn.value && checkOut.value <= checkIn.value) checkOut.value = '';
+  if (checkIn.value && checkOut.value) {
+    const nights = Math.round((new Date(`${checkOut.value}T00:00:00`) - new Date(`${checkIn.value}T00:00:00`)) / 86400000);
+    bookingNights.textContent = `${nights} ${nights === 1 ? 'night' : 'nights'} · `;
+    bookingError.hidden = true;
+  } else bookingNights.textContent = '';
+}
+checkIn.addEventListener('change', syncBookingDates);
+checkOut.addEventListener('change', syncBookingDates);
+syncBookingDates();
+bookingForm.addEventListener('submit', event => {
+  syncBookingDates();
+  if (!checkIn.value || !checkOut.value) {
+    event.preventDefault();
+    bookingError.hidden = false;
+    bookingError.textContent = 'Choose a check-in and a check-out date.';
+    (checkIn.value ? checkOut : checkIn).focus();
+  }
 });

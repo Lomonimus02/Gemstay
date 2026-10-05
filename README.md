@@ -1,6 +1,6 @@
 # GemStay — local redesign
 
-A responsive, English-language redesign focused on property owners, with holiday-home discovery for guests. Built with semantic HTML, CSS and JavaScript, without framework or package dependencies. Photos and fonts are served locally.
+A responsive, English-language redesign for guests first, with a separate chapter for property owners. Built with semantic HTML, CSS and JavaScript, without framework or package dependencies. Photos and fonts are served locally.
 
 The visual direction incorporates the client's references, The Ocean Holiday Homes and Monty Holiday Home: a panoramic photo hero, teal and gold accents, distinct owner and guest actions, and more prominent service and property cards. GemStay branding, photos, content and calculator remain independent of the reference companies.
 

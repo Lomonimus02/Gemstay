@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#153f48">
-  <meta name="description" content="Discover a more effortless way to own a holiday home in Dubai. Explore GemStay property management, beautiful stays, and your property's earning potential.">
-  <title>GemStay — Beautiful stays. Effortless ownership.</title>
+  <meta name="description" content="Holiday homes in Dubai. Browse GemStay apartments and villas, book a stay, and — if you own a property — see how the hosting is looked after.">
+  <title>GemStay — Holiday homes in Dubai</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preload" as="font" href="assets/manrope-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
@@ -32,93 +32,364 @@
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z"/><path d="M8 8c0 4 4 8 8 8m-8-8 1 2m5 5 2 1"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-guests" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 11a3 3 0 1 0-2.2-5M17 19a5 5 0 0 0-3-4.6"/></symbol>
   </defs></svg>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="utility-bar"><div class="wrap"><span><svg><use href="#i-pin"/></svg> Dubai homes. Exceptional hospitality.</span><a href="tel:+971545283848"><svg><use href="#i-phone"/></svg> +971 54 528 3848</a></div></div>
+  <div class="utility-bar"><div class="wrap"><span><svg><use href="#i-pin"/></svg> Holiday homes in Dubai</span><a href="tel:+971545283848"><svg><use href="#i-phone"/></svg> +971 54 528 3848</a></div></div>
   <header class="site-header wrap">
-    <a href="#" class="brand" aria-label="GemStay home"><img src="assets/logo.webp" width="166" height="40" alt="GemStay Vacation Homes"></a>
+    <a href="#homes" class="brand" aria-label="GemStay home"><img src="assets/logo.webp" width="166" height="40" alt="GemStay Vacation Homes"></a>
     <nav id="main-nav" aria-label="Main navigation">
-      <a class="nav-active" href="#owners">Property owners</a><a href="#services">Our services</a><a href="#calculator">Revenue calculator</a><a href="#about">About us</a><a href="#contact">Contact</a>
+      <a href="#collection">Homes</a>
+      <a href="#experience">The stay</a>
+      <a href="#owners">Owners</a>
+      <a href="#calculator">Estimate</a>
+      <a href="#about">About</a>
+      <a href="#faq">Questions</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="button button-small header-cta" href="#stays">Book your stay <svg><use href="#i-diagonal"/></svg></a>
+    <a class="button button-small header-cta" href="#booking">Book a stay <svg><use href="#i-diagonal"/></svg></a>
     <button class="menu-toggle" data-open-menu aria-label="Open navigation" aria-haspopup="dialog" aria-expanded="false" aria-controls="navigation-dialog"><svg><use href="#i-menu"/></svg></button>
   </header>
   <nav class="scroll-nav" id="scroll-navigation" aria-label="Section navigation" hidden>
-    <div class="scroll-nav-links"></div>
+    <div class="scroll-nav-links">
+      <a href="#collection">Homes</a>
+      <a href="#experience">The stay</a>
+      <a href="#owners">Owners</a>
+      <a href="#how-it-works">How it starts</a>
+      <a href="#calculator">Estimate</a>
+      <a href="#about">About</a>
+      <a href="#faq">Questions</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
   <div class="mobile-dock" hidden>
-    <a href="#calculator"><svg><use href="#i-chart"/></svg> Estimate my income <svg><use href="#i-arrow"/></svg></a>
+    <a href="#collection"><svg><use href="#i-home"/></svg> Explore homes <svg><use href="#i-arrow"/></svg></a>
     <button data-open-menu aria-label="Open section menu" aria-haspopup="dialog" aria-controls="navigation-dialog" aria-expanded="false"><svg><use href="#i-menu"/></svg><span>Menu</span></button>
   </div>
   <dialog id="navigation-dialog" aria-labelledby="navigation-title">
     <div class="navigation-dialog-heading"><span class="eyebrow">GEMSTAY · DUBAI</span><button class="navigation-close" aria-label="Close navigation"><svg><use href="#i-close"/></svg></button></div>
-    <h2 id="navigation-title">Where to next?</h2>
-    <nav class="mobile-nav-links" aria-label="Mobile navigation"></nav>
+    <h2 id="navigation-title">On this page</h2>
+    <nav class="mobile-nav-links" aria-label="Mobile navigation">
+      <div class="mobile-nav-group">
+        <p class="mobile-nav-label">Staying</p>
+        <a href="#collection">Homes</a>
+        <a href="#experience">The stay</a>
+      </div>
+      <div class="mobile-nav-group">
+        <p class="mobile-nav-label">Owning</p>
+        <a href="#owners">Owners</a>
+        <a href="#how-it-works">How it starts</a>
+        <a href="#calculator">Estimate</a>
+      </div>
+      <div class="mobile-nav-group">
+        <p class="mobile-nav-label">GemStay</p>
+        <a href="#about">About</a>
+        <a href="#faq">Questions</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <a class="button navigation-book" href="https://gemstay.ae/properties/" target="_blank" rel="noopener">Book a stay <svg><use href="#i-diagonal"/></svg></a>
     <a class="navigation-contact" href="tel:+971545283848"><svg><use href="#i-phone"/></svg><span>Speak to our team<strong>+971 54 528 3848</strong></span></a>
   </dialog>
   <main id="main">
-    <section class="hero wrap" id="owners" aria-labelledby="hero-title">
+    <section class="hero surface-dark" id="homes" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <span class="eyebrow"><span class="status-dot"></span> DUBAI. THOUGHTFULLY MANAGED.</span>
-        <h1 id="hero-title">Your property.<br><em>More potential.</em></h1>
-        <p>Holiday home management in Dubai. We handle listings, guests and maintenance, so you can earn from your property.</p>
-        <div class="hero-actions"><a href="#calculator" class="button">See what your home could earn <svg><use href="#i-arrow"/></svg></a><a href="#stays" class="button hero-guest-button">Find your next stay <svg><use href="#i-diagonal"/></svg></a></div>
-        <div class="hero-assurance"><span><svg><use href="#i-check"/></svg> Full-service management</span><span><svg><use href="#i-check"/></svg> Local Dubai expertise</span><span><svg><use href="#i-check"/></svg> Clear owner reporting</span></div>
+        <span class="eyebrow"><span class="status-dot"></span> HOLIDAY HOMES IN DUBAI</span>
+        <h1 id="hero-title">Stay in Dubai,<br><em>in a home.</em></h1>
+        <p>Apartments and villas prepared for guests. Choose one, book with GemStay, and arrive to a home that is already looked after.</p>
+        <div class="hero-actions">
+          <a href="#collection" class="button">See the homes <svg><use href="#i-arrow"/></svg></a>
+          <a href="#owners" class="text-link hero-owner-link">Own a property in Dubai? <svg><use href="#i-diagonal"/></svg></a>
+        </div>
+        <div class="hero-assurance"><span><svg><use href="#i-check"/></svg> Prepared for arrival</span><span><svg><use href="#i-check"/></svg> Book with GemStay</span><span><svg><use href="#i-check"/></svg> A team in Dubai</span></div>
       </div>
       <div class="hero-visual">
         <img class="hero-image" src="assets/hero.webp" alt="Golden light over Dubai's coastline and the Burj Al Arab" width="1800" height="1199" fetchpriority="high">
-        <div class="photo-credit"><span><svg><use href="#i-pin"/></svg> JUMEIRAH, DUBAI</span><span>BEAUTIFUL STAYS. EFFORTLESS OWNERSHIP.</span></div>
+        <div class="photo-credit"><span><svg><use href="#i-pin"/></svg> JUMEIRAH, DUBAI</span><span>HOLIDAY HOMES, READY TO BOOK</span></div>
       </div>
     </section>
 
-    <section class="calculator-wrap wrap" id="calculator" aria-labelledby="calculator-title">
-      <div class="calculator-card">
-        <div class="calc-heading"><div class="calc-symbol"><svg><use href="#i-chart"/></svg></div><div><span class="eyebrow">LET'S RUN THE NUMBERS</span><h2 id="calculator-title">What could your property earn?</h2></div><span class="quick-note"><svg><use href="#i-clock"/></svg> Full planner. No sign-up.</span></div>
-        <form id="calculator-form" class="calculator-form">
-          <div class="field"><label for="area">Property location</label><div class="select-control"><svg><use href="#i-pin"/></svg><select id="area" name="area"><option value="marina">Dubai Marina</option><option value="downtown">Downtown Dubai</option><option value="palm">Palm Jumeirah</option><option value="jbr">Jumeirah Beach Residence</option><option value="business">Business Bay</option><option value="jvc">Jumeirah Village Circle</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
-          <div class="field"><label for="property-type">Property type</label><div class="select-control"><svg><use href="#i-home"/></svg><select id="property-type" name="type"><option value="apartment">Apartment</option><option value="villa">Villa</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
-          <div class="field"><label for="bedrooms">Bedrooms</label><div class="select-control"><svg><use href="#i-bed"/></svg><select id="bedrooms" name="bedrooms"><option value="0">Studio</option><option value="1" selected>1 bedroom</option><option value="2">2 bedrooms</option><option value="3">3 bedrooms</option><option value="4">4 bedrooms</option><option value="5">5 bedrooms</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
-          <button class="button calculate-button" type="submit">Build my revenue plan <svg><use href="#i-arrow"/></svg></button>
-        </form>
-        <div class="calc-footnote"><span><svg><use href="#i-shield"/></svg> Your property. Your possibilities.</span><span>Illustrative estimate. Actual returns will vary.</span></div>
+    <div class="booking-wrap wrap" id="booking">
+      <form class="booking-card" id="booking-form" action="https://gemstay.ae/properties/" method="get">
+        <div class="field">
+          <label for="check-in">Check in</label>
+          <div class="select-control booking-date">
+            <svg><use href="#i-calendar"/></svg>
+            <input id="check-in" name="mphb_check_in_date" type="date" required autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label for="check-out">Check out</label>
+          <div class="select-control booking-date">
+            <svg><use href="#i-calendar"/></svg>
+            <input id="check-out" name="mphb_check_out_date" type="date" required autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label for="guests">Guests</label>
+          <div class="select-control">
+            <svg><use href="#i-guests"/></svg>
+            <select id="guests" name="mphb_adults">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7">7 guests</option>
+              <option value="8">8 guests</option>
+            </select>
+            <svg class="chevron"><use href="#i-chevron"/></svg>
+          </div>
+        </div>
+        <button class="button booking-submit" type="submit">Check availability <svg><use href="#i-arrow"/></svg></button>
+        <p id="booking-error" class="booking-error" role="alert" hidden></p>
+        <p class="booking-note"><span id="booking-nights"></span><span>Availability and the price open on GemStay.</span></p>
+      </form>
+    </div>
 
-        <noscript><p class="noscript-note">Enable JavaScript to use the calculator, or email <a href="mailto:hello@gemstay.ae">hello@gemstay.ae</a> for a property review.</p></noscript>
+    <section class="collection section wrap" aria-labelledby="collection-title">
+      <div class="section-top" id="collection">
+        <div>
+          <span class="eyebrow">HOMES TO BEGIN WITH</span>
+          <h2 id="collection-title">Three places to <em>feel settled.</em></h2>
+        </div>
+        <p>A marina view, a beach retreat, and a high-floor skyline home. Prices start where shown. Availability for every home is on GemStay.</p>
+      </div>
+      <div class="stay-grid">
+        <a class="stay-card" href="https://gemstay.ae/properties/324346" target="_blank" rel="noopener">
+          <div class="stay-image"><img src="assets/marina.webp" alt="Panoramic views of Dubai Marina from Blissful Marina Haven" width="900" height="600" loading="lazy"><span class="stay-tag">CITY &amp; WATERFRONT</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div>
+          <p><svg><use href="#i-pin"/></svg> Dubai Marina</p>
+          <h3>Blissful Marina Haven</h3>
+          <span class="stay-description">A front-row seat to the city.</span>
+          <span class="stay-facts"><strong>From AED 515</strong><span>a night · 3 guests · 2 beds</span></span>
+        </a>
+        <a class="stay-card" href="https://gemstay.ae/properties/324347" target="_blank" rel="noopener">
+          <div class="stay-image"><img src="assets/beach.webp" alt="GemStay's Private Beach Sunny Retreat holiday home" width="900" height="675" loading="lazy"><span class="stay-tag">COASTAL LIVING</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div>
+          <p><svg><use href="#i-pin"/></svg> Dubai</p>
+          <h3>Your Private Beach Sunny Retreat</h3>
+          <span class="stay-description">Sun-filled days, a slower pace.</span>
+          <span class="stay-facts"><strong>From AED 799</strong><span>a night · 3 guests · 1 bed</span></span>
+        </a>
+        <a class="stay-card" href="https://gemstay.ae/properties/324349" target="_blank" rel="noopener">
+          <div class="stay-image"><img src="assets/skyline.webp" alt="GemStay's Skyline Sanctuary on the 82nd holiday home" width="900" height="600" loading="lazy"><span class="stay-tag">ABOVE IT ALL</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div>
+          <p><svg><use href="#i-pin"/></svg> Dubai</p>
+          <h3>Skyline Sanctuary on the 82nd</h3>
+          <span class="stay-description">A different perspective on Dubai.</span>
+          <span class="stay-facts"><strong>From AED 1,200</strong><span>a night · 6 guests · 3 beds</span></span>
+        </a>
+      </div>
+      <div class="collection-foot">
+        <p>These three are a way in. The current collection, dates and details are on GemStay.</p>
+        <a class="button button-outline" href="https://gemstay.ae/properties/" target="_blank" rel="noopener">Browse all homes <svg><use href="#i-diagonal"/></svg></a>
       </div>
     </section>
 
-    <section class="distribution wrap" aria-label="Booking platform distribution"><p>Listed globally.<br><strong>Managed personally.</strong></p><div class="platforms"><span class="platform-airbnb"><svg viewBox="0 0 32 34" fill="none" aria-hidden="true"><path d="M16 3c-2 0-3 2-5 6L3 25c-3 7 4 9 8 4 3-3 8-9 7-12-1-4-5-4-6 0-1 3 4 9 7 12 4 5 11 3 8-4L19 9c-2-4-1-6-3-6Z" stroke="currentColor" stroke-width="2"/></svg>airbnb</span><span class="platform-booking">Booking<span>.com</span></span><span class="platform-expedia"><b>↗</b> Expedia</span><span class="platform-vrbo">Vrbo</span><span class="more-platforms">& more</span></div></section>
-
-    <section class="services section wrap" id="services" aria-labelledby="services-title">
-      <div class="section-top"><div><span class="eyebrow">LESS TO MANAGE. MORE TO ENJOY.</span><h2 id="services-title">We do the hosting.<br><em>You enjoy the owning.</em></h2></div><p>From your first listing to your next happy guest,<br class="desktop-break"> everything your holiday home needs, under one roof.</p></div>
-      <div class="service-grid">
-        <article class="service-card"><div class="service-top"><svg><use href="#i-chart"/></svg><span>01</span></div><h3>Smarter earning</h3><p>Thoughtful pricing, professional photography, and listings on global platforms. Give your home the visibility it deserves.</p><a href="#calculator">Explore your potential <svg><use href="#i-diagonal"/></svg></a></article>
-        <article class="service-card"><div class="service-top"><svg><use href="#i-key"/></svg><span>02</span></div><h3>Guests, taken care of</h3><p>A warm welcome, smooth check-ins, and attentive guest communication. The little details that make a stay memorable.</p><a href="#how-it-works">See how we work <svg><use href="#i-diagonal"/></svg></a></article>
-        <article class="service-card"><div class="service-top"><svg><use href="#i-home"/></svg><span>03</span></div><h3>Your home, in good hands</h3><p>Housekeeping, maintenance, and regular property checks. A beautifully kept home, ready for every arrival.</p><a href="#about">Meet your local partner <svg><use href="#i-diagonal"/></svg></a></article>
-        <article class="service-card"><div class="service-top"><svg><use href="#i-shield"/></svg><span>04</span></div><h3>Clarity at every step</h3><p>Monthly reports and an owner's dashboard keep you in the picture. Know how your property is performing, wherever you are.</p><button class="card-link" data-contact>Talk to our team <svg><use href="#i-diagonal"/></svg></button></article>
+    <section class="experience section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">THE STAY</span>
+            <h2 id="experience-title">Arranged before <em>you land.</em></h2>
+          </div>
+          <p>A GemStay is a home first. The arrival, the housekeeping and the city around it can be arranged with the same team.</p>
+        </div>
+        <ol class="journey">
+          <li><span>01</span><h3>Choose the home</h3><p>Marina, the beach, or high above the skyline. See who it sleeps and the starting nightly price, then book on GemStay.</p></li>
+          <li><span>02</span><h3>Arrive to it ready</h3><p>Ask for an airport pickup if you want one. Check-in is handled, and the home is cleaned and set for the dates you booked.</p></li>
+          <li><span>03</span><h3>Stay, and ask</h3><p>Housekeeping can continue through a longer visit. If you want the desert, the water or a car, the team arranges it from the home.</p></li>
+        </ol>
+        <div class="extras">
+          <div>
+            <span class="eyebrow">AROUND THE STAY</span>
+            <h3>Ask when you book.</h3>
+          </div>
+          <ul>
+            <li><svg><use href="#i-pin"/></svg><span><strong>Getting here</strong> Airport pickup and a car, if you want one waiting.</span></li>
+            <li><svg><use href="#i-sparkle"/></svg><span><strong>Days out</strong> Yacht, desert and water plans, arranged around the home.</span></li>
+            <li><svg><use href="#i-key"/></svg><span><strong>The neighbourhood</strong> Discounts at selected restaurants and shops.</span></li>
+            <li><svg><use href="#i-globe"/></svg><span><strong>A longer chapter</strong> Relocation, business setup, or buying a home in the UAE.</span></li>
+          </ul>
+        </div>
+        <div class="offers">
+          <div class="offers-intro">
+            <span class="eyebrow">OFFERS ON SELECTED STAYS</span>
+            <h3>A longer booking goes further.</h3>
+            <p>Confirmed with the team when you book. Residents can use the stay offers together.</p>
+          </div>
+          <ul>
+            <li><span>01</span><strong>Five days</strong><span>Book five days and receive two extra days, with airport pickup and a more flexible check-in where the home allows.</span></li>
+            <li><span>02</span><strong>Seven nights</strong><span>A stay of a week includes a one-hour yacht outing and one complimentary clean.</span></li>
+            <li><span>03</span><strong>Three months</strong><span>Book three months and receive a month. Residents also receive 20% at selected restaurants nearby, and can use the other stay offers together.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="process-section" id="how-it-works" aria-labelledby="process-title"><div class="wrap process-inner"><div class="process-intro"><span class="eyebrow">FROM PROPERTY TO POSSIBILITY</span><h2 id="process-title">A fresh start.<br><em>In four simple steps.</em></h2><button class="text-link light" data-contact>Let's get started <svg><use href="#i-arrow"/></svg></button></div><ol class="steps"><li><span>01</span><h3>Let's meet your property</h3><p>We review your home, discuss your goals, and agree on a plan.</p></li><li><span>02</span><h3>Make it guest-ready</h3><p>From furnishing advice to photography and listing preparation.</p></li><li><span>03</span><h3>Open your doors</h3><p>We launch your listings and take care of bookings and guests.</p></li><li><span>04</span><h3>Settle into the benefits</h3><p>Receive income updates while we keep the day-to-day running.</p></li></ol></div></section>
+    <section class="owners" id="owners" aria-labelledby="owners-title">
+      <div class="owner-lead surface-dark">
+        <div class="wrap owner-lead-grid">
+          <div>
+            <span class="eyebrow">IF THE HOME IS YOURS</span>
+            <h2 id="owners-title">Your home can host.<br><em>You don't have to.</em></h2>
+            <p>GemStay lists the property, welcomes the guests and keeps the day-to-day running. You keep the home, and you can still reserve nights in it.</p>
+            <button class="button" type="button" data-contact>Talk about your property <svg><use href="#i-arrow"/></svg></button>
+          </div>
+          <blockquote class="owner-quote">
+            <p>No upfront listing fee. GemStay earns when the home does.</p>
+            <span>The terms, the permits and the services are agreed before anything starts.</span>
+          </blockquote>
+        </div>
+      </div>
 
-    <section class="stays section wrap" id="stays" aria-labelledby="stays-title"><div class="section-top"><div><span class="eyebrow">GREAT HOMES. EVEN BETTER MEMORIES.</span><h2 id="stays-title">A place to feel <em>at home.</em></h2></div><a class="button button-outline" href="https://gemstay.ae/properties/" target="_blank" rel="noopener">Explore all stays <svg><use href="#i-diagonal"/></svg></a></div><div class="stay-grid">
-      <a class="stay-card" href="https://gemstay.ae/properties/324346" target="_blank" rel="noopener"><div class="stay-image"><img src="assets/marina.webp" alt="Panoramic views of Dubai Marina from Blissful Marina Haven" width="900" height="600" loading="lazy"><span class="stay-tag">CITY & WATERFRONT</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div><p><svg><use href="#i-pin"/></svg> Dubai Marina</p><h3>Blissful Marina Haven</h3><span class="stay-description">A front-row seat to the city.</span></a>
-      <a class="stay-card" href="https://gemstay.ae/properties/324347" target="_blank" rel="noopener"><div class="stay-image"><img src="assets/beach.webp" alt="GemStay's Private Beach Sunny Retreat holiday home" width="900" height="675" loading="lazy"><span class="stay-tag">COASTAL LIVING</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div><p><svg><use href="#i-pin"/></svg> Dubai</p><h3>Your Private Beach Sunny Retreat</h3><span class="stay-description">Sun-filled days, a slower pace.</span></a>
-      <a class="stay-card" href="https://gemstay.ae/properties/324349" target="_blank" rel="noopener"><div class="stay-image"><img src="assets/skyline.webp" alt="GemStay's Skyline Sanctuary on the 82nd holiday home" width="900" height="600" loading="lazy"><span class="stay-tag">ABOVE IT ALL</span><span class="stay-arrow"><svg><use href="#i-diagonal"/></svg></span></div><p><svg><use href="#i-pin"/></svg> Dubai</p><h3>Skyline Sanctuary on the 82nd</h3><span class="stay-description">A different perspective on Dubai.</span></a>
-    </div><p class="stays-note">Explore the current availability and details of each home on GemStay.</p></section>
+      <div class="distribution wrap" aria-label="Booking platforms"><p>Your listing.<br><strong>Their usual booking sites.</strong></p><div class="platforms"><span class="platform-airbnb"><svg viewBox="0 0 32 34" fill="none" aria-hidden="true"><path d="M16 3c-2 0-3 2-5 6L3 25c-3 7 4 9 8 4 3-3 8-9 7-12-1-4-5-4-6 0-1 3 4 9 7 12 4 5 11 3 8-4L19 9c-2-4-1-6-3-6Z" stroke="currentColor" stroke-width="2"/></svg>airbnb</span><span class="platform-booking">Booking<span>.com</span></span><span class="platform-expedia"><b>↗</b> Expedia</span><span class="platform-vrbo">Vrbo</span><span class="more-platforms">& more</span></div></div>
 
-    <section class="about-section wrap" id="about" aria-labelledby="about-title"><div class="about-image"><img src="assets/beach.webp" alt="A thoughtfully prepared GemStay holiday home" width="900" height="675" loading="lazy"><span class="about-image-label"><svg><use href="#i-sparkle"/></svg> The details make the difference.</span></div><div class="about-copy"><span class="eyebrow">YOUR LOCAL PARTNER</span><h2 id="about-title">Dubai is our home.<br><em>Hospitality is our nature.</em></h2><p>We're GemStay. We bring together thoughtfully selected homes and people who want to experience Dubai at its best.</p><p>For owners, that means a dedicated partner who takes care of the details. For guests, it means a comfortable place to land and a stay worth remembering.</p><a class="text-link" href="#contact">Get to know us <svg><use href="#i-diagonal"/></svg></a></div></section>
+      <div class="services section wrap" id="services">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">WHAT WE TAKE ON</span>
+            <h2 id="services-title">The hosting,<br><em>under one roof.</em></h2>
+          </div>
+          <p>From the first listing to the next guest. Everything the home needs, agreed with you before it starts.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-top"><svg><use href="#i-chart"/></svg><span>01</span></div><h3>Smarter earning</h3><p>Thoughtful pricing, professional photography, and listings on global platforms. Give your home the visibility it deserves.</p><a href="#calculator">Explore an estimate <svg><use href="#i-diagonal"/></svg></a></article>
+          <article class="service-card"><div class="service-top"><svg><use href="#i-key"/></svg><span>02</span></div><h3>Guests, taken care of</h3><p>A warm welcome, smooth check-ins, and attentive guest communication. The details that make a stay easy to host.</p><a href="#how-it-works">See how we start <svg><use href="#i-diagonal"/></svg></a></article>
+          <article class="service-card"><div class="service-top"><svg><use href="#i-home"/></svg><span>03</span></div><h3>Your home, in good hands</h3><p>Housekeeping, maintenance, and regular property checks. A kept home, ready for every arrival — including yours.</p><a href="#about">Meet your local partner <svg><use href="#i-diagonal"/></svg></a></article>
+          <article class="service-card"><div class="service-top"><svg><use href="#i-shield"/></svg><span>04</span></div><h3>Clarity at every step</h3><p>Monthly reports and an owner's dashboard. Know how the property is doing, wherever you are.</p><button class="card-link" type="button" data-contact>Talk to our team <svg><use href="#i-diagonal"/></svg></button></article>
+        </div>
+      </div>
 
-    <section class="faq section wrap" aria-labelledby="faq-title"><div class="faq-intro"><span class="eyebrow">GOOD QUESTIONS. CLEAR ANSWERS.</span><h2 id="faq-title">A little more<br><em>peace of mind.</em></h2><p>Still have something on your mind?<br>Our team is happy to help.</p><button class="text-link" data-contact>Let's talk <svg><use href="#i-arrow"/></svg></button></div><div class="faq-list">
-      <details><summary>What does GemStay manage?<span>+</span></summary><p>We handle listing preparation, guest bookings and communication, check-ins, housekeeping, maintenance, and monthly reporting. Your property review will confirm the services and terms for your home.</p></details>
-      <details><summary>How accurate is the revenue calculator?<span>+</span></summary><p>The calculator is an illustrative planning tool. It uses sample nightly rates and occupancy assumptions, not live market data. It shows booking revenue, the costs you enter, and the income remaining before financing, taxes and acquisition costs. Request a personalised property review for an estimate based on your property's location, condition, amenities, and current demand.</p></details>
-      <details><summary>Does my property need to be furnished?<span>+</span></summary><p>Holiday homes need to be ready for guests. We review your property and can help with furnishing and preparation where needed. The scope and costs are agreed with you before work begins.</p></details>
-      <details><summary>Can I still use my property?<span>+</span></summary><p>Owner stays can be arranged. Talk to the team about reserving your dates in advance, subject to your agreement and any existing guest bookings.</p></details>
-      <details><summary>How do I get started, and what does it cost?<span>+</span></summary><p>Contact our team for a property review. We'll discuss your goals, explain the management fees and any setup costs, and agree on the services and contract terms before you make a decision.</p></details>
-    </div></section>
+      <div class="process-section surface-dark" id="how-it-works" aria-labelledby="process-title">
+        <div class="wrap process-inner">
+          <div class="process-intro">
+            <span class="eyebrow">HOW OWNERSHIP STARTS</span>
+            <h2 id="process-title">From your home<br><em>to the first guest.</em></h2>
+            <button class="text-link light" type="button" data-contact>Begin with a conversation <svg><use href="#i-arrow"/></svg></button>
+          </div>
+          <ol class="steps">
+            <li><span>01</span><h3>Meet the property</h3><p>We visit, talk through your plans, and agree the contract, permits and services.</p></li>
+            <li><span>02</span><h3>Make it guest-ready</h3><p>Furnishing if the home needs it, then photography and a listing prepared to standard.</p></li>
+            <li><span>03</span><h3>Open the doors</h3><p>The home goes live on GemStay and the major booking sites. We take the guests from there.</p></li>
+            <li><span>04</span><h3>You see it working</h3><p>Bookings, care of the home, and a report. Reserve your own nights ahead of existing stays.</p></li>
+          </ol>
+        </div>
+      </div>
 
-    <section class="contact-banner wrap" id="contact" aria-labelledby="contact-title"><div><span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span><h2 id="contact-title">Let's bring out the best<br><em>in your property.</em></h2><p>A conversation today. New possibilities tomorrow.</p></div><div class="contact-actions"><button class="button button-cream" data-contact>Book a property consultation <svg><use href="#i-diagonal"/></svg></button><a href="https://wa.me/971545283848" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg> Or say hello on WhatsApp</a></div><span class="banner-flower" aria-hidden="true">✳</span></section>
+      <div class="calculator-wrap wrap" id="calculator" aria-labelledby="calculator-title">
+        <div class="calculator-card">
+          <div class="calc-heading"><div class="calc-symbol"><svg><use href="#i-chart"/></svg></div><div><span class="eyebrow">A PLANNING ESTIMATE</span><h2 id="calculator-title">What could your property earn?</h2></div><span class="quick-note"><svg><use href="#i-clock"/></svg> Full planner. No sign-up.</span></div>
+          <p class="calc-intro">On the right home, nightly stays can earn more across a year than a traditional lease. This tool uses example rates so you can explore the shape of that income. It is not a forecast or a GemStay fee quote.</p>
+          <form id="calculator-form" class="calculator-form">
+            <div class="field"><label for="area">Property location</label><div class="select-control"><svg><use href="#i-pin"/></svg><select id="area" name="area"><option value="marina">Dubai Marina</option><option value="downtown">Downtown Dubai</option><option value="palm">Palm Jumeirah</option><option value="jbr">Jumeirah Beach Residence</option><option value="business">Business Bay</option><option value="jvc">Jumeirah Village Circle</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
+            <div class="field"><label for="property-type">Property type</label><div class="select-control"><svg><use href="#i-home"/></svg><select id="property-type" name="type"><option value="apartment">Apartment</option><option value="villa">Villa</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
+            <div class="field"><label for="bedrooms">Bedrooms</label><div class="select-control"><svg><use href="#i-bed"/></svg><select id="bedrooms" name="bedrooms"><option value="0">Studio</option><option value="1" selected>1 bedroom</option><option value="2">2 bedrooms</option><option value="3">3 bedrooms</option><option value="4">4 bedrooms</option><option value="5">5 bedrooms</option></select><svg class="chevron"><use href="#i-chevron"/></svg></div></div>
+            <button class="button calculate-button" type="submit">Build my revenue plan <svg><use href="#i-arrow"/></svg></button>
+          </form>
+          <div class="calc-footnote"><span><svg><use href="#i-shield"/></svg> Illustrative only. Actual returns will vary.</span><span>Financing, taxes and purchase costs are excluded.</span></div>
+          <noscript><p class="noscript-note">Enable JavaScript to use the calculator, or email <a href="mailto:hello@gemstay.ae">hello@gemstay.ae</a> for a property review.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section wrap" id="about" aria-labelledby="about-title">
+      <div class="about-image"><img src="assets/beach.webp" alt="A thoughtfully prepared GemStay holiday home" width="900" height="675" loading="lazy"><span class="about-image-label"><svg><use href="#i-sparkle"/></svg> The details make the difference.</span></div>
+      <div class="about-copy">
+        <span class="eyebrow">GEMSTAY</span>
+        <h2 id="about-title">Dubai is our home.<br><em>Hospitality is the work.</em></h2>
+        <p>We choose homes and look after them. A guest gets somewhere comfortable to land. An owner gets a partner who runs the hosting.</p>
+        <p>The office is at Ibn Battuta Gate. The phone is answered by the same team that looks after the stays.</p>
+        <a class="text-link" href="#contact">Choose your next step <svg><use href="#i-diagonal"/></svg></a>
+      </div>
+    </section>
+
+    <section class="faq section wrap" id="faq" aria-labelledby="faq-title">
+      <div class="faq-intro">
+        <span class="eyebrow">QUESTIONS</span>
+        <h2 id="faq-title">Answers for a stay.<br><em>And for a home you own.</em></h2>
+        <p>If yours is not here, call or write. The useful answer depends on the home.</p>
+        <a class="text-link" href="tel:+971545283848">Call the team <svg><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="faq-groups">
+        <div class="faq-group">
+          <h3>Staying</h3>
+          <div class="faq-list">
+            <details>
+              <summary>What does a GemStay include?<span>+</span></summary>
+              <p>A prepared home, with check-in and housekeeping as part of the stay. Airport pickup, a car, days out and dining discounts can be added when you book. Relocation and business-setup help are available for guests who need them.</p>
+            </details>
+            <details>
+              <summary>How do I book?<span>+</span></summary>
+              <p>Open the home on GemStay, check the dates and the price, and book there. The team can also help on WhatsApp or by phone if you would rather talk it through.</p>
+            </details>
+            <details>
+              <summary>Which offers are available?<span>+</span></summary>
+              <p>Selected stays include two extra days on a five-day booking, a yacht hour and a clean on seven nights, or a complimentary month on a three-month booking. Residents can combine the stay offers and receive 20% at selected restaurants. The team confirms what applies to the home and the dates.</p>
+            </details>
+          </div>
+        </div>
+        <div class="faq-group">
+          <h3>Owning</h3>
+          <div class="faq-list">
+            <details>
+              <summary>What does GemStay manage?<span>+</span></summary>
+              <p>Listing preparation, guest bookings and communication, check-ins, housekeeping, maintenance, and monthly reporting. A property review confirms the services and terms for your home. There is no upfront listing fee — GemStay earns when the home does.</p>
+            </details>
+            <details>
+              <summary>How accurate is the revenue calculator?<span>+</span></summary>
+              <p>The calculator is an illustrative planning tool. It uses sample nightly rates and occupancy assumptions, not live market data. It shows booking revenue, the costs you enter, and the income remaining before financing, taxes and acquisition costs. Ask for a property review for an estimate based on your home.</p>
+            </details>
+            <details>
+              <summary>Does my property need to be furnished?<span>+</span></summary>
+              <p>Holiday homes need to be ready for guests, including DTCM standards. We inspect the property and can furnish it where it falls short. Scope and cost are agreed before any work begins.</p>
+            </details>
+            <details>
+              <summary>Can I still use my property?<span>+</span></summary>
+              <p>Yes. Owner stays can be reserved in advance, subject to your agreement and any guest booking already in place. Contract length is discussed individually. Permits and insurance are issued for a year and can be renewed.</p>
+            </details>
+            <details>
+              <summary>What if a guest damages the home?<span>+</span></summary>
+              <p>GemStay collects a security deposit and provides damage protection, so a guest stay does not rest on goodwill alone. The exact cover is part of the agreement.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="close-paths wrap" id="contact" aria-labelledby="contact-title">
+      <article class="path-guest surface-dark">
+        <img src="assets/marina.webp" alt="" width="900" height="600">
+        <div>
+          <span class="eyebrow">BOOK A STAY</span>
+          <h2 id="contact-title">The homes are ready.</h2>
+          <p>See dates, prices and the rest of the collection, then book the one that fits.</p>
+          <a class="button" href="https://gemstay.ae/properties/" target="_blank" rel="noopener">Browse all homes <svg><use href="#i-diagonal"/></svg></a>
+        </div>
+      </article>
+      <article class="path-owner">
+        <span class="eyebrow">OWN A PROPERTY</span>
+        <h2>Have a home in Dubai?</h2>
+        <p>Tell us where it is and what you want from it. We'll say honestly whether holiday-home management fits.</p>
+        <button class="button" type="button" data-contact>Book a property conversation <svg><use href="#i-arrow"/></svg></button>
+        <a href="https://wa.me/971545283848" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg> Or say hello on WhatsApp</a>
+      </article>
+    </section>
   </main>
-  <footer class="site-footer wrap"><div class="footer-main"><div class="footer-brand"><a href="#" class="brand"><img src="assets/logo.webp" width="166" height="40" alt="GemStay Vacation Homes"></a><p>Beautiful stays.<br>Effortless ownership.</p><span><svg><use href="#i-pin"/></svg> Ibn Battuta Gate, Dubai, UAE</span></div><div><h3>Discover</h3><a href="#owners">For property owners</a><a href="#stays">Find a stay</a><a href="#about">About GemStay</a></div><div><h3>For owners</h3><a href="#services">Our services</a><a href="#calculator">Revenue calculator</a><a href="#how-it-works">How it works</a></div><div><h3>Let's connect</h3><a href="mailto:hello@gemstay.ae">hello@gemstay.ae <svg><use href="#i-diagonal"/></svg></a><a href="tel:+971545283848">+971 54 528 3848</a><a href="https://wa.me/971545283848" target="_blank" rel="noopener">WhatsApp us <svg><use href="#i-diagonal"/></svg></a></div></div><div class="footer-bottom"><span>© 2026 GemStay. All rights reserved.</span><div><a href="https://gemstay.ae/privacy-policy/" target="_blank" rel="noopener">Privacy policy</a><a href="https://gemstay.ae/terms-conditions/" target="_blank" rel="noopener">Terms & conditions</a><span>Made for a better stay <svg><use href="#i-sparkle"/></svg></span></div></div></footer>
+  <footer class="site-footer wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#homes" class="brand"><img src="assets/logo.webp" width="166" height="40" alt="GemStay Vacation Homes"></a>
+        <p>Beautiful stays.<br>Looked after in Dubai.</p>
+        <span><svg><use href="#i-pin"/></svg> Ibn Battuta Gate, Dubai, UAE</span>
+      </div>
+      <div><h3>Stay</h3><a href="#collection">Homes</a><a href="#experience">The stay</a><a href="https://gemstay.ae/properties/" target="_blank" rel="noopener">Book on GemStay <svg><use href="#i-diagonal"/></svg></a></div>
+      <div><h3>Owners</h3><a href="#owners">Owners</a><a href="#how-it-works">How it starts</a><a href="#calculator">Estimate</a></div>
+      <div><h3>Let's connect</h3><a href="mailto:hello@gemstay.ae">hello@gemstay.ae <svg><use href="#i-diagonal"/></svg></a><a href="tel:+971545283848">+971 54 528 3848</a><a href="https://wa.me/971545283848" target="_blank" rel="noopener">WhatsApp us <svg><use href="#i-diagonal"/></svg></a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 GemStay. All rights reserved.</span><div><a href="https://gemstay.ae/privacy-policy/" target="_blank" rel="noopener">Privacy policy</a><a href="https://gemstay.ae/terms-conditions/" target="_blank" rel="noopener">Terms &amp; conditions</a><span>Made for a better stay <svg><use href="#i-sparkle"/></svg></span></div></div>
+  </footer>
+
   <dialog id="revenue-dialog" aria-labelledby="planner-title">
     <div class="planner-shell">
       <header class="planner-header">
